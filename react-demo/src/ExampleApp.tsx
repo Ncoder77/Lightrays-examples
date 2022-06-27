@@ -5,8 +5,8 @@ the <App /> tag with <ExampleApp /> in the index.tsx file.
 
 import './Lightrays/style/css/style.css';
 
-import * as Nav from './Lightrays/components/LRNav';
-import * as LRFunctions from "./Lightrays/scripts/LRFunctions";
+import * as Nav from './Lightrays/react-scripts/components/LRNav';
+import * as LRFunctions from "./Lightrays/react-scripts/LRFunctions";
 
 import logo from './Lightrays/img/logo.png';
 import navSide_Light from './Lightrays/img/navSide_Light.png';
