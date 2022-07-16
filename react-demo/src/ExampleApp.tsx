@@ -3,10 +3,11 @@ This is an example App to show the functionalities of Lightrays. To use it, repl
 the <App /> tag with <ExampleApp /> in the index.tsx file.
 */
 
-import './Lightrays/style/css/style.css';
+import './Lightrays/style/css/Lightrays.css';
 
-import * as Nav from './Lightrays/react-scripts/components/LRNav';
-import * as LRFunctions from "./Lightrays/react-scripts/LRFunctions";
+import * as LR from './Lightrays/scripts/LR'
+import * as Nav from './Lightrays/scripts/react-components/LRNav';
+import * as LRFunctions from "./Lightrays/scripts/LRUtils";
 
 import logo from './Lightrays/img/logo.png';
 import navSide_Light from './Lightrays/img/navSide_Light.png';
@@ -16,8 +17,10 @@ import React, { CSSProperties, ReactChild, ReactChildren, useState } from 'react
 import { BrowserRouter, Routes, Route, Link, Router } from "react-router-dom";
 import * as ReactDOMServer from 'react-dom/server';
 
+
 function ExampleApp() {
-  LRFunctions.setBackgroundColor(LRFunctions.BackgroundColors.night);
+  LR.setTheme(LR.Theme.DARK);
+
 
   //JSX
   return (
@@ -49,8 +52,8 @@ function ExampleApp() {
               <Nav.Label>Inputs</Nav.Label>
               <Nav.Icon className='fluentNav.Nav.Icon'></Nav.Icon>
             </Nav.Item>
-            <Nav.Item>
-              <Nav.Label>Lists & Boxes</Nav.Label>
+            <Nav.Item to={"/components/window"}>
+              <Nav.Label>Window</Nav.Label>
               <Nav.Icon className='fluentNav.Nav.Icon'></Nav.Icon>
             </Nav.Item>
           </Nav.Foldout>
@@ -74,6 +77,7 @@ function ExampleApp() {
                 <Routes>
                   <Route path='' element={<WhatIsLighrays/>} />
                   <Route path='/components/navigation' element={<ComponentsNavigation />} />
+                  <Route path='7comonents/window' element={<ComponentsWindow />} />
                 </Routes>
               </div>
             </Nav.Content>
@@ -214,15 +218,32 @@ let ComponentsNavigation = () => {
   );
 }
 
-  //Style
-  const h1Style: CSSProperties = {
-    padding: '20px 0 20px 0',
-    textAlign: 'center',
-    color: 'var(--foreground)',
-    zIndex: 2
-  }
+let ComponentsWindow = () => {
 
-  const boxStyle: CSSProperties = { flex: "1 1 250px", margin: "10px", minWidth: "150px" }
+  const [windowOpen, setWindowOpen] = useState<boolean>(false);
+  const toggleWindowHandler = (isOpen: boolean) => setWindowOpen(isOpen);  //LWDWindow callback handler (to update state)
+  const openWindow = () => setWindowOpen(true);  //Button event handler
+
+  return (
+    <>
+      <button onClick={openWindow}></button>
+      <h2>LR Window</h2>
+      <div>
+        Content
+      </div>
+    </>
+  )
+}
+
+//Style
+const h1Style: CSSProperties = {
+  padding: '20px 0 20px 0',
+  textAlign: 'center',
+  color: 'var(--text-color)',
+  zIndex: 2
+}
+
+const boxStyle: CSSProperties = { flex: "1 1 250px", margin: "10px", minWidth: "150px" }
 
 
 export default ExampleApp;
