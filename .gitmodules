@@ -1,3 +1,6 @@
 [submodule "react-demo/src/Lightrays"]
 	path = react-demo/src/Lightrays
 	url = https://github.com/Ncoder77/Lightrays.git
+[submodule "demo/Lightrays"]
+	path = demo/Lightrays
+	url = https://github.com/Ncoder77/Lightrays.git
