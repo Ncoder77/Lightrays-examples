@@ -5,22 +5,25 @@ the <App /> tag with <ExampleApp /> in the index.tsx file.
 
 import './Lightrays/style/css/Lightrays.css';
 
-import * as LR from './Lightrays/scripts/LR'
+import LR, {Theme} from './Lightrays/scripts/LR'
 import * as Nav from './Lightrays/scripts/react-components/LRNav';
-import * as LRFunctions from "./Lightrays/scripts/LRUtils";
 
 import logo from './Lightrays/img/logo.png';
 import navSide_Light from './Lightrays/img/navSide_Light.png';
 import navSide_Dark from './Lightrays/img/navSide_Dark.png';
 
-import React, { CSSProperties, ReactChild, ReactChildren, useState } from 'react';
-import { BrowserRouter, Routes, Route, Link, Router } from "react-router-dom";
+import React, { CSSProperties, useState } from 'react';
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import * as ReactDOMServer from 'react-dom/server';
 
 
 function ExampleApp() {
-  LR.setTheme(LR.Theme.DARK);
-
+  let newTheme = Theme.TESTDARK;
+  let newnewTheme = Theme.fromJsonString(newTheme.toJsonString());
+  console.log(newTheme);
+  console.log(newTheme.toJsonString());
+  
+  LR.setTheme(newnewTheme);
 
   //JSX
   return (
