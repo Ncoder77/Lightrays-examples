@@ -18,12 +18,8 @@ import * as ReactDOMServer from 'react-dom/server';
 
 
 function ExampleApp() {
-  let newTheme = Theme.TESTDARK;
-  let newnewTheme = Theme.fromJsonString(newTheme.toJsonString());
-  console.log(newTheme);
-  console.log(newTheme.toJsonString());
-  
-  LR.setTheme(newnewTheme);
+ 
+  LR.setTheme(Theme.LIGHT);
 
   //JSX
   return (
@@ -61,12 +57,13 @@ function ExampleApp() {
             </Nav.Item>
           </Nav.Foldout>
 
-          <Nav.Item>
-            <Nav.Label>Give Feedback!</Nav.Label>
-            <Nav.Icon></Nav.Icon>
-          </Nav.Item>
-
         </Nav.Group>
+
+        <Nav.Item>
+          <Nav.Label>Give Feedback!</Nav.Label>
+          <Nav.Icon></Nav.Icon>
+        </Nav.Item>
+
 
         <Nav.Content>
           <Nav.LRNav type={Nav.NavTypes.bottom} style={{ "--width": "500px", "--height": "50px", "margin": "10px" }}>
@@ -100,9 +97,9 @@ let WhatIsLighrays = () => {
         <p style={{width: "800px", maxWidth: "100%", lineHeight: "1.5em", fontSize: "1.05em"}}>
           Lightrays is a lightweight, ultra-responsive web design framework. Inspired from real-life lighting, 
           Lightrays was created to ensure it fits in the world and nature around us. The framework is intended to help developing 
-          websites and web-apps without having to care about design, device-compability or layout. Lightrays comes with different themes, 
-          inputs, navigation systems, and other layout components like boxes and windows. It has strong React support, 
-          but you can also use it without any framework.  
+          websites and web-apps without having to care about device-compabilit or layout. Choose your theme, 
+          inputs, navigation systems, and other layout components like boxes and windows that fit your website.
+          Lightrays has strong React support, but you can also use it without any framework.  
         </p>
         <p><button style={{padding: " 10px 15px 10px 15px"}}><Link to="/components/navigation" className={"noStyle"}>Show examples</Link></button></p>
       </div>
