@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+      "noImplicitAny": true,
+      "module": "AMD",
+      "target": "ESNext",
+      "jsx": "react",
+      "allowJs": true,
+      "moduleResolution": "node",
+      "outFile": "./scripts/built/Lightrays.js",
+    }
+}
